@@ -1,0 +1,51 @@
+const int button1Pin = 2;
+const int button2Pin = 3;
+const int button3Pin = 4;
+const int button4Pin = 5;
+const int button5Pin = 6;
+const int button6Pin = 7;
+
+void setup() {
+  pinMode(button1Pin, INPUT_PULLUP);
+  pinMode(button2Pin, INPUT_PULLUP);
+  pinMode(button3Pin, INPUT_PULLUP);
+  pinMode(button4Pin, INPUT_PULLUP);
+  pinMode(button5Pin, INPUT_PULLUP);
+  pinMode(button6Pin, INPUT_PULLUP);
+  
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(button1Pin) == LOW) {
+    Serial.println("1");
+    delay(2500);
+  }
+  
+  if (digitalRead(button2Pin) == LOW) {
+    Serial.println("2");
+    delay(2500);
+  }
+  
+  if (digitalRead(button3Pin) == LOW) {
+    Serial.println("3");
+    delay(2500);
+  }
+  
+  if (digitalRead(button4Pin) == LOW) {
+    Serial.println("4");
+    delay(2500);
+  }
+  
+  if (digitalRead(button5Pin) == LOW) {
+    Serial.println("5");
+    delay(2500);
+  }
+  
+  if (digitalRead(button6Pin) == LOW) {
+    Serial.println("6");
+    delay(2500);
+  }
+  
+  delay(100);
+}
