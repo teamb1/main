@@ -1,0 +1,11 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#divmap{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
