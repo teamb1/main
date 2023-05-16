@@ -1,2 +1,1 @@
-:D
-:
+console.log("gfgh")
