@@ -5,7 +5,7 @@
 }
 
 #map{
-    top: 5%;
-    left: 10%;
     position: relative;
+    align-items: center;
+    justify-content: center;
 }
