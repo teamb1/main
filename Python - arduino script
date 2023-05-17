@@ -1,36 +1,29 @@
 import serial
 import webbrowser
-
-# Otevření sériového portu
+                    
 ser = serial.Serial('COM7', 9600)
 
 while True:
-    data = ser.readline().strip()  # Přečtení řádky dat ze sériového portu
+    data = ser.readline().strip()
 
     if data:
-        button_number = int(data.decode())  # Převedení řetězce na číslo
+        button_number = int(data.decode())
 
         if button_number == 1:
-            webbrowser.open('https://www.google.com')
-            # Zde přidejte kód pro spuštění Google
+            webbrowser.open('https://read.macmillan.com/mcpg/the-one-and-only-sparkella/')
             
         elif button_number == 2:
             webbrowser.open('https://www.youtube.com')
-            # Zde přidejte kód pro spuštění YouTube
             
         elif button_number == 3:
-            webbrowser.open('https://mail.google.com')
-            # Zde přidejte kód pro spuštění Gmail
+            webbrowser.open('https://www.python.org/')
             
         elif button_number == 4:
             webbrowser.open('https://www.youradio.cz')
-            # Zde přidejte kód pro spuštění Youradio
             
         elif button_number == 5:
             webbrowser.open('https://www.pohadkozem.cz')
-            # Zde přidejte kód pro spuštění Pohádkozem
             
         elif button_number == 6:
-            webbrowser.open('https://www.novinky.cz')
-            # Zde přidejte kód pro spuštění Novinky.cz
+            webbrowser.open('https://www.art.yale.edu/') 
 
