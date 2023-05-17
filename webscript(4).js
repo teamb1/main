@@ -18,9 +18,13 @@ let fullurl
 scope.addEventListener("click", search)
 
 function search(){
-	let value = "https://www." + input.value
+    if(input.value === ""){
+	    alert("nebyla zadana žádná adresa")
+	}
+	let value = "http://google.com/search?q=" + input.value
 	window.open(value, "_blank")
 	input.value = ""
+
 }
 ////////////////// vyhledani po stisknuti Entru/////////////////
 body.addEventListener("keydown", (e) => {
@@ -38,7 +42,7 @@ let button = document.querySelector(".btn")
 //////////////////////////////// uložení do localstorage /////////////////////
 button.addEventListener("click", addLink)
   function addLink() {
-           let url = prompt("Zadejte adresu odkazu:", "webpropostizene.8u.cz");
+           let url = prompt("Zadejte adresu odkazu:", "example");
            fullurl = "https://www." + url
            console.log(fullurl)
   			if(prompt != null){
