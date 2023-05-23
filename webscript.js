@@ -4,6 +4,7 @@ let scope = document.querySelector("#scope")
 let body = document.querySelector("body")
 let inputURL = document.querySelector(".inputURL")
 let inputNAME = document.querySelector(".inputNAME")
+let button = document.querySelector(".btn")
 let link
 let ls
 let jsonls
@@ -21,10 +22,11 @@ function search(){
     if(input.value === ""){
 	    alert("nebyla zadana žádná adresa")
 	}
+	else{
 	let value = "http://google.com/search?q=" + input.value
 	window.open(value, "_blank")
 	input.value = ""
-
+	}
 }
 ////////////////// vyhledani po stisknuti Entru/////////////////
 body.addEventListener("keydown", (e) => {
@@ -37,13 +39,20 @@ body.addEventListener("keydown", (e) => {
 })
 
 
-///////////////////////////// buttom deklarace ////////////////////////////////
-let button = document.querySelector(".btn")
 //////////////////////////////// uložení do localstorage /////////////////////
 button.addEventListener("click", addLink)
   function addLink() {
            let url = prompt("Zadejte adresu odkazu:", "example");
-           fullurl = "https://www." + url
+		   if (url.slice(0,6) == "https:"){
+			fullurl = url
+		   }
+		   else if (url.slice(0,5) == "http:"){
+			fullurl = url
+		   }
+		   else {
+			fullurl = "https://www." + url
+		   }
+
            console.log(fullurl)
   			if(prompt != null){
   				link = url
@@ -54,6 +63,7 @@ button.addEventListener("click", addLink)
               ls = localStorage.setItem("URL", jsonls)
               jsonparse = localStorage.getItem("URL")
               parse = JSON.parse(jsonparse)
+			  console.log(parse)
               let output = document.querySelector("#output")
               output.textContent = parse
               
