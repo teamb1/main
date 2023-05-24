@@ -24,6 +24,6 @@ while True:
         elif button_number == 5:
             webbrowser.open('https://www.pohadkozem.cz')
             
-        elif button_number == 6:
+        else:
             webbrowser.open('https://www.art.yale.edu/') 
 
